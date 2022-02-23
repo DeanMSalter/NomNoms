@@ -1,0 +1,115 @@
+general:
+  enabled: true
+foods:
+  RABBIT_STEW:
+    hunger: 10
+    saturation: 12
+    giveBowl: true
+  COOKED_PORKCHOP:
+    hunger: 8
+    saturation: 12.8
+    giveBowl: false
+  COOKED_BEEF:
+    hunger: 8
+    saturation: 12.8
+    giveBowl: false
+  GOLDEN_CARROT:
+    hunger: 6
+    saturation: 14.4
+    giveBowl: false
+  COOKED_MUTTON:
+    hunger: 6
+    saturation: 9.6
+    giveBowl: false
+  COOKED_SALMON:
+    hunger: 6
+    saturation: 9.6
+    giveBowl: false
+  BEETROOT_SOUP:
+    hunger: 6
+    saturation: 7.2
+    giveBowl: true
+  COOKED_CHICKEN:
+    hunger: 6
+    saturation: 7.2
+    giveBowl: false
+  MUSHROOM_STEW:
+    hunger: 6
+    saturation: 7.2
+    giveBowl: true
+  PUMPKIN_PIE:
+    hunger: 8
+    saturation: 4.8
+    giveBowl: false
+  BAKED_POTATO:
+    hunger: 5
+    saturation: 4.8
+    giveBowl: false
+  BREAD:
+    hunger: 8
+    saturation: 6
+    giveBowl: false
+  COOKED_COD:
+    hunger: 5
+    saturation: 6
+    giveBowl: false
+  COOKED_RABBIT:
+    hunger: 5
+    saturation: 6
+    giveBowl: false
+  CARROT:
+    hunger: 3
+    saturation: 3.6
+    giveBowl: false
+  APPLE:
+    hunger: 4
+    saturation: 3.6
+    giveBowl: false
+  RAW_BEEF:
+    hunger: 3
+    saturation: 1.8
+    giveBowl: false
+  RAW_PORKCHOP:
+    hunger: 3
+    saturation: 1.8
+    giveBowl: false
+  RAW_RABBIT:
+    hunger: 3
+    saturation: 1.8
+    giveBowl: false
+  MELON_SLICE:
+    hunger: 2
+    saturation: 1.2
+    giveBowl: false
+  RAW_MUTTON:
+    hunger: 2
+    saturation: 1.2
+    giveBowl: false
+  COOKIE:
+    hunger: 2
+    saturation: 0.4
+    giveBowl: false
+  GLOW_BERRIES:
+    hunger: 2
+    saturation: 0.4
+    giveBowl: false
+  RAW_COD:
+    hunger: 2
+    saturation: 0.4
+    giveBowl: false
+  RAW_SALMON:
+    hunger: 2
+    saturation: 0.4
+    giveBowl: false
+  BEETROOT:
+    hunger: 1
+    saturation: 1.2
+    giveBowl: false
+  POTATO:
+    hunger: 1
+    saturation: 0.6
+    giveBowl: false
+  TROPICAL_FISH:
+    hunger: 1
+    saturation: 0.2
+    giveBowl: false

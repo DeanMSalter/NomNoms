@@ -1,0 +1,54 @@
+name: NomNoms # the plugins name as it should appear in the plugin list /pl
+version: 1.0 # the plugin's version
+author: Deano3663
+main: McEssence.NomNoms.Main
+api-version: 1.18
+commands:
+  NomNoms:
+    description: NomNoms
+    usage: /NomNoms
+    permission: NomNoms
+  NomNoms setHunger:
+    description: set hunger for a player
+    usage: /NomNoms setHunger (playerName)
+    permission: NomNoms.admin.setHunger
+  NomNoms setSaturation:
+    description: set saturation for a player
+    usage: /NomNoms setSaturation (playerName)
+    permission: NomNoms.admin.setSaturation
+  NomNoms getHunger:
+    description: get hunger for a player
+    usage: /NomNoms getHunger (playerName)
+    permission: NomNoms.admin.getHunger
+  NomNoms getSaturation:
+    description: get saturation for a player
+    usage: /NomNoms getSaturation (playerName)
+    permission: NomNoms.admin.getSaturation
+  NomNoms reload:
+    description: reload NomNoms
+    usage: /NomNoms reload
+    permission: NomNoms.admin.reload
+permissions:
+  NomNoms.admin.*:
+    description: Gives access to all NomNoms admin permissions
+    children:
+      NomNoms.admin.reload: true
+      NomNoms.admin.setHunger: true
+      NomNoms.admin.setSaturation: true
+      NomNoms.admin.getHunger: true
+      NomNoms.admin.getSaturation: true
+  NomNoms.admin.reload:
+    description: Allows you to reload NomNoms configs
+    default: op
+  NomNoms.admin.setHunger:
+    description: Allows you setHunger
+    default: op
+  NomNoms.admin.setSaturation:
+    description: Allows you setSaturation
+    default: op
+  NomNoms.admin.getHunger:
+    description: Allows you getHunger
+    default: op
+  NomNoms.admin.getSaturation:
+    description: Allows you getSaturation
+    default: op
