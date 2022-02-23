@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
@@ -22,6 +23,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.Map.entry;
 
 public class Listeners implements Listener {
     Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("NomNoms");
@@ -58,19 +62,34 @@ public class Listeners implements Listener {
 
     @EventHandler
     public void InventoryClickEvent(InventoryClickEvent event) {
-        InventoryType playerInventory = InventoryType.CRAFTING;
-        if (event.getInventory().getType() == playerInventory) {
+        if (event.isShiftClick()) {
+            setItemLore(event.getCurrentItem());
+        } else {
             setItemLore(event.getCursor());
         }
     }
-
+    @EventHandler
+    public void InventoryDragEvent(InventoryDragEvent event) {
+        setItemLore(event.getCursor());
+    }
     private void setItemLore(ItemStack itemToChange){
         ItemMeta meta = itemToChange.getItemMeta();
+        if (meta == null) {
+            return;
+        }
+        Integer hunger = config.getHunger(itemToChange.getType());
+        Float saturation = config.getSaturation(itemToChange.getType());
         List<String> Lore = new ArrayList<>();
-        Lore.add("Hunger: " + config.getHunger(itemToChange.getType()));
-        Lore.add("Saturation: " + config.getSaturation(itemToChange.getType()));
+        if (hunger != null) {
+            Lore.add("Hunger: " + hunger);
+        }
+        if (saturation != null) {
+            Lore.add("Saturation: " + saturation);
+        }
 
-        meta.setLore(Lore);
-        itemToChange.setItemMeta(meta);
+        if (hunger != null || saturation != null) {
+            meta.setLore(Lore);
+            itemToChange.setItemMeta(meta);
+        }
     }
 }
